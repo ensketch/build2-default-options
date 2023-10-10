@@ -1,0 +1,39 @@
+# Use whitelisting.
+#
+*
+
+# Allow all subfolders.
+#
+!*/
+
+# Don't ignore default C and C++ file extensions.
+#
+!*.h
+!*.c
+!*.hpp
+!*.cpp
+
+# Don't ignore source generation files.
+#
+!*.in
+
+# Don't ignore Clang-Format configuration.
+#
+!.clang-format
+
+# Don't ignore standard build2 files.
+#
+!buildfile
+!bootstrap.build
+!export.build
+!root.build
+!*manifest
+!*testscript
+
+# Don't ignore license and documentation files.
+#
+!*.md
+
+# Don't ignore Git-specific files.
+#
+!.git*

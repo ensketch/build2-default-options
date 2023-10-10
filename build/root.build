@@ -1,0 +1,15 @@
+using in
+using bash
+
+bash{*}:
+{
+  extension = sh
+  install.mode = 755
+}
+
+define support: file
+
+define options: support
+options{*}: extension = options
+
+{bash support}{*}: install = root/.build2/

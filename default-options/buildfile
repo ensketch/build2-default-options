@@ -1,0 +1,9 @@
+./: options{bdep-new -bdep-new-*} \
+  options{bdep-new-project bdep-new-package bdep-new-source}
+
+options{bdep-new-project}: in{bdep-new-project}
+options{bdep-new-package}: in{bdep-new-package}
+options{bdep-new-source}: in{bdep-new-source}
+
+./: bash{*}
+./: support{*.md *.gitignore *.clang-format}

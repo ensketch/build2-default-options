@@ -1,0 +1,12 @@
+: 1
+name: ensketch-build2-default-options
+version: 0.1.0-a.0.z
+summary: build2 Default Options Files for ensketch Development Environment
+license: other: TODO
+
+description-file: README.md
+url: https://github.com/ensketch/build2-default-options
+email: ensketch@mailbox.org
+
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
