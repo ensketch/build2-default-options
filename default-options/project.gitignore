@@ -1,8 +1,18 @@
-# Use whitelisting.
+# Use whitelisting and ignore everything by default.
 #
 *
 
-# Allow all subfolders.
+# Don't ignore Git-specific files.
+#
+!.git*
+!.githooks/**
+!setup.sh
+
+# Don't ignore license and documentation files.
+#
+!*.md
+
+# Don't ignore subfolders.
 #
 !*/
 
@@ -12,6 +22,8 @@
 !*.c
 !*.hpp
 !*.cpp
+!*.ipp
+!*.tpp
 
 # Don't ignore source generation files.
 #
@@ -29,11 +41,3 @@
 !root.build
 !*manifest
 !*testscript
-
-# Don't ignore license and documentation files.
-#
-!*.md
-
-# Don't ignore Git-specific files.
-#
-!.git*

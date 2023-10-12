@@ -1,2 +1,6 @@
 #!/bin/bash
-rm $(find $1 -type f -name .gitignore)
+
+# Recursively remove all '.gitignore' files
+# starting from the current directory.
+#
+rm $(find . -type f -name .gitignore)

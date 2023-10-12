@@ -13,3 +13,9 @@ define options: support
 options{*}: extension = options
 
 {bash support}{*}: install = root/.build2/
+
+assert ($install.root != [null]) \
+  "No 'install.root' given. Set 'config.install.root'."
+
+options_dir = [dir_path] \
+  $regex.replace($install.resolve($install.root)/.build2, '\\', '\\\\')

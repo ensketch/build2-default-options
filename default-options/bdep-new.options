@@ -1,8 +1,0 @@
-# Don't allow outer default options files
-# to change this configuration.
-#
---no-default-options
-
-# By default, C++ is used with '*.?pp' file extensions.
-#
---lang c++,extension=?pp
