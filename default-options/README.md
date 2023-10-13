@@ -9,9 +9,15 @@ xxx is a C++ library.
 ![repo-size-badge](https://img.shields.io/github/repo-size/ensketch/xxx.svg?style=for-the-badge)
 [![license-badge](https://img.shields.io/github/license/ensketch/xxx.svg?style=for-the-badge&color=blue)](#copyright-and-license)
 
+[![cppget.org](https://img.shields.io/website/https/cppget.org/libensketch-xxx.svg?down_message=offline&label=b|2cppget.org&style=for-the-badge&up_color=blue&up_message=online)](https://cppget.org/libensketch-xxx)
+
 </div>
 
 ## Requirements and Dependencies
+
+- [`build2`][build2]
+
+For more details, see the `manifest` files of this project.
 
 ## Introduction
 
@@ -24,7 +30,7 @@ First, try to request it from your system's package manager.
 For the unlucky case that the package is not officially provided, [The `build2` Installation Manual][build2-install] covers easy instructions for multiple target configurations to build the toolchain from source.
 Furthermore, it is recommended but not necessary to get familiar with its [documentation][build2-docs] by starting with [The `build2` Toolchain Introduction][build2-intro] and maybe [The `build2` Build System Manual][build2-build-system].
 
-### Usage in build2 Project
+### Usage in a `build2` Project
 
 1. Add this repository to the `repositories.manifest` of your build2 project.
 
@@ -44,18 +50,18 @@ depends: libensketch-xxx ^0.1.0
 
 ```
 import xxx = libensketch-xxx%lib{ensketch-xxx}
-exe{xxx}: {hxx cxx}{**} $xxx
+exe{myexe}: {hxx cxx}{**} $xxx
 ```
 
-### Installation and Package Consumption for Projects not Using build2
+### Installation and Package Consumption for Projects not Using `build2`
 
-How to make a build2 package available on your system for projects that do not use build2?
-The following instructions are taken from [The build2 Toolchain Introduction: Package Consumption](https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#guide-consume-pkg) and have been compressed to the most important steps.
+How to make a `build2` package available on your system for projects that do not use `build2`?
+The following instructions are taken from [The `build2` Toolchain Introduction: Package Consumption][build2-intro-consumption] and have been compressed to the most important steps.
 We encourage you to at least read the section of the manual, though, to get to know about more advanced consumption strategies and workflows.
 After the installation, use the provided `pkg-config` file to import the library in your project or manually provide the include and library path to the compiler.
-[The build2 toolchain Introduction: Using Unpackaged Dependencies](https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#guide-unpackaged-deps) provides more insight even for build strategies not based on build2.
+[The `build2` toolchain Introduction: Using Unpackaged Dependencies][build2-intro-unpackaged-dependencies] provides more insight even for build strategies not based on `build2`.
 
-1. If you have not already done this, create a suitable build configuration for C/C++-based build2 projects. You can use this one for all your needed build2 packages by starting from step `2`.
+1. If you have not already done this, create a suitable build configuration for C/C++-based `build2` projects. You can use this one for all your needed `build2` packages by starting from step `2`.
 
 ```
 bpkg create -d build2-packages cc \
@@ -96,17 +102,47 @@ bpkg install libensketch-xxx
 
 ## Configuration
 
-## Usage and Examples
+This project does not contain any public configuration options.
 
-## Documentation
+## Usage, Examples, and Tutorials
+
+Currently, there are no examples and/or tutorials available.
+
+## FAQs and HOWTOs
+
+Currently, there are no FAQs and/or HOWTO entries available.
 
 ## API Reference
 
-Currently, there is no
+Currently, there is no API reference documentation available as we are lacking a stable and automatic generation mechanism.
+Instead, we encourage you to read through the source files to get a thorough list of available namespaces, classes, functions, and variables.
+The source files have been split into interface and implementation units.
+In each interface unit, a decent amount of documentation comments explains the behavior and API of functions and classes to the consumer of the library to facilitate comprehension.
+In implementation units, only necessary comments are provided to give further insights or point out issues concerning specific implementation strategies.
+
+## Background and Discussions
+
+Currently, there is no background documentation available.
+Please see the [GitHub Discussion Page]() for discussions.
 
 ## Changelog
 
+Currently, there is no changelog available, because no version has been released so far.
+
+## Contributing
+
 ## Code of Conduct
+
+Please see [Ensketch's Default Code of Conduct][ensketch-code-of-conduct].
+
+## Contact
+
+Please contact us at ensketch@mailbox.org if you have questions or comments about xxx.
+If you find bugs or have problems please use our github issue tracking page.
+
+If you’re using xxx in your projects, quickly drop us a note.
+Tell us who you are and what you’re using it for.
+This helps us apply for funding and justify spending time maintaining this.
 
 ## Copyright and License
 
@@ -115,10 +151,10 @@ The revision history in the version control system is the primary source of auth
 Please see individual source files for appropriate copyright notices.
 For more information, see the file [`AUTHORS.md`](AUTHORS.md).
 
-xxx is free software, distributed under the terms of the [GNU] General
+xxx is free software, distributed under the terms of the GNU General
 Public License as published by the Free Software Foundation,
 version 3 of the License (or any later version).  For more information,
-see [GPL] or the file [`COPYING.md`](COPYING.md).
+see the [GNU General Public License][GPLv3] or the file [`COPYING.md`](COPYING.md).
 
 xxx is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
@@ -131,11 +167,20 @@ Copyright years on xxx source files may be listed using range notation, e.g., 19
 - [`build2` | Documentation][build2-docs]
 - [The `build2` Toolchain Introduction][build2-intro]
 - [The `build2` Build System][build2-build-system]
-- [GNU Licenses][GPL]
+- [The `build2` Package Manager][build2-package-manager]
+- [The `build2` Toolchain Introduction: Package Consumption][build2-intro-consumption]
+- [The `build2` Toolchain Introduction: Using Unpackaged Dependencies][build2-intro-unpackaged-dependencies]
+- [GNU Licenses][GNU-licenses]
+- [GNU General Public License Version 3][GPLv3]
 
 [build2]: https://build2.org (build2 | C/C++ Build Toolchain)
 [build2-install]: https://build2.org/install.xhtml (build2 | Installation)
 [build2-docs]: https://build2.org/doc.xhtml (build2 | Documentation)
 [build2-intro]: https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml (The build2 Toolchain Introduction)
 [build2-build-system]: https://build2.org/build2/doc/build2-build-system-manual.xhtml (The build2 Build System)
-[GPL]: https://www.gnu.org/licenses/ (GNU Licenses)
+[build2-package-manager]: https://build2.org/bpkg/doc/build2-package-manager-manual.xhtml (The build2 Package Manager)
+[build2-intro-consumption]: https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#guide-consume-pkg (The build2 Toolchain Introduction: Package Consumption)
+[build2-intro-unpackaged-dependencies]: https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#guide-unpackaged-deps (The build2 Toolchain Introduction: Using Unpackaged Dependencies)
+[ensketch-code-of-conduct]: https://github.com/ensketch/.github/blob/main/CODE_OF_CONDUCT.md (Ensketch's Default Code of Conduct)
+[GNU-licenses]: https://www.gnu.org/licenses/ (GNU Licenses)
+[GPLv3]: https://www.gnu.org/licenses/gplv3.html (GNU General Public License Version 3)
