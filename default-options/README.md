@@ -9,28 +9,42 @@ xxx is a C++ library.
 ![repo-size-badge](https://img.shields.io/github/repo-size/ensketch/xxx.svg?style=for-the-badge)
 [![license-badge](https://img.shields.io/github/license/ensketch/xxx.svg?style=for-the-badge&color=blue)](#copyright-and-license)
 
-[![cppget.org](https://img.shields.io/website/https/cppget.org/libensketch-xxx.svg?down_message=offline&label=b|2cppget.org&style=for-the-badge&up_color=blue&up_message=online)](https://cppget.org/libensketch-xxx)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/ensketch/xxx?style=for-the-badge)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/ensketch/xxx?style=for-the-badge)
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/ensketch/xxx?style=for-the-badge)
+
+[![cppget.org](https://img.shields.io/website/https/cppget.org/libensketch-xxx.svg?down_message=offline&label=cppget.org&style=for-the-badge&up_color=blue&up_message=online)](https://cppget.org/libensketch-xxx)
 
 </div>
 
 ## Requirements and Dependencies
 
+**Operating System:**
+- Linux | MacOS | Windows | FreeBSD
+
+**C++ Compiler:**
+- GCC | Clang | MinGW | MSVC | Emscripten
+
+**Build System:**
 - [`build2`][build2]
 
-For more details, see the `manifest` files of this project.
+<!-- **Automatically handled Dependencies:** -->
 
-## Introduction
+<!-- **Manually handled Requirements:** -->
+
+For a thorough list of dependencies and requirements with version constraints and more details, see the [`manifest`][manifest] file of this project.
+
+<!-- ## Introduction -->
 
 ## Getting Started
-
-## Build, Test, and Install
+<!-- ## Build, Test, and Install -->
 
 This project is based on [the `build2` toolchain][build2] and to use and test it, you at least need to have the toolchain installed on your system.
 First, try to request it from your system's package manager.
 For the unlucky case that the package is not officially provided, [The `build2` Installation Manual][build2-install] covers easy instructions for multiple target configurations to build the toolchain from source.
 Furthermore, it is recommended but not necessary to get familiar with its [documentation][build2-docs] by starting with [The `build2` Toolchain Introduction][build2-intro] and maybe [The `build2` Build System Manual][build2-build-system].
 
-### Usage in a `build2` Project
+### Usage in `build2`-Based Projects
 
 1. Add this repository to the `repositories.manifest` of your build2 project.
 
@@ -53,9 +67,10 @@ import xxx = libensketch-xxx%lib{ensketch-xxx}
 exe{myexe}: {hxx cxx}{**} $xxx
 ```
 
-### Installation and Package Consumption for Projects not Using `build2`
+### Installation and Usage in Projects not Based on `build2`
 
-How to make a `build2` package available on your system for projects that do not use `build2`?
+*How to make a `build2` package available on your system for projects that do not use `build2`?*
+
 The following instructions are taken from [The `build2` Toolchain Introduction: Package Consumption][build2-intro-consumption] and have been compressed to the most important steps.
 We encourage you to at least read the section of the manual, though, to get to know about more advanced consumption strategies and workflows.
 After the installation, use the provided `pkg-config` file to import the library in your project or manually provide the include and library path to the compiler.
@@ -100,36 +115,86 @@ bpkg build libensketch-xxx
 bpkg install libensketch-xxx
 ```
 
+### Development Setup
+
+The main steps to set this repository up for development are taken from [the `build2` documentation][build2-docs] and are provided in compressed form.
+It is highly recommended to read through [The `build2` Toolchain Introduction][build2-intro] to get a deeper understanding of how to use `build2` for development.
+
+```
+mkdir xxx
+cd xxx
+git clone --recurse https://github.com/ensketch/xxx.git
+cd xxx
+bdep init -C @gcc-release cc \
+  config.cxx=g++ \
+  config.cxx.coptions="-O3 -march=native" \
+  config.install.root=../.install \
+  config.dist.root=../.dist
+b
+b clean
+b test
+b install
+b uninstall
+b dist: libensketch-xxx
+bdep update
+bdep test
+bdep clean
+
+bdep update @gcc-release
+bdep test @gcc-release
+bdep clean @gcc-release
+
+bdep update -a
+bdep test -a
+bdep clean -a
+```
+
 ## Configuration
 
 This project does not contain any public configuration options.
 
-## Usage, Examples, and Tutorials
+## Documentation
+
+Currently, all the documentation for this project is part of its `README.md` file.
+Long parts of documentation might be factored out in the future.
+
+### Usage, Examples, and Tutorials
 
 Currently, there are no examples and/or tutorials available.
 
-## FAQs and HOWTOs
+### FAQs and HOWTOs
 
 Currently, there are no FAQs and/or HOWTO entries available.
 
-## API Reference
+### API Reference
 
 Currently, there is no API reference documentation available as we are lacking a stable and automatic generation mechanism.
 Instead, we encourage you to read through the source files to get a thorough list of available namespaces, classes, functions, and variables.
+
 The source files have been split into interface and implementation units.
 In each interface unit, a decent amount of documentation comments explains the behavior and API of functions and classes to the consumer of the library to facilitate comprehension.
 In implementation units, only necessary comments are provided to give further insights or point out issues concerning specific implementation strategies.
 
-## Background and Discussions
+### Background and Discussions
 
 Currently, there is no background documentation available.
 Please see the [GitHub Discussion Page]() for discussions.
+
+## Roadmap
+
+Currently, there is no roadmap available.
 
 ## Changelog
 
 Currently, there is no changelog available, because no version has been released so far.
 
 ## Contributing
+
+GitHub Issues (Templates)
+GitHub Pull Requests (Templates)
+Which pull requests will be approved?
+
+Please see [Ensketch's Default Contributing Guidelines][ensketch-contributing].
 
 ## Code of Conduct
 
@@ -162,16 +227,22 @@ Copyright years on xxx source files may be listed using range notation, e.g., 19
 
 ## References and Other Resources
 
+- [Ensketch's Default Contributing Guidelines][ensketch-contributing]
+- [Ensketch's Default Code of Conduct][ensketch-code-of-conduct]
 - [`build2` | C/C++ Build Toolchain][build2]
-- [`build2` | Installation][build2-install]
-- [`build2` | Documentation][build2-docs]
-- [The `build2` Toolchain Introduction][build2-intro]
-- [The `build2` Build System][build2-build-system]
-- [The `build2` Package Manager][build2-package-manager]
-- [The `build2` Toolchain Introduction: Package Consumption][build2-intro-consumption]
-- [The `build2` Toolchain Introduction: Using Unpackaged Dependencies][build2-intro-unpackaged-dependencies]
+<!-- - [`build2` | Installation][build2-install] -->
+<!-- - [`build2` | Documentation][build2-docs] -->
+<!-- - [The `build2` Toolchain Introduction][build2-intro] -->
+<!-- - [The `build2` Build System][build2-build-system] -->
+<!-- - [The `build2` Package Manager][build2-package-manager] -->
+<!-- - [The `build2` Toolchain Introduction: Package Consumption][build2-intro-consumption] -->
+<!-- - [The `build2` Toolchain Introduction: Using Unpackaged Dependencies][build2-intro-unpackaged-dependencies] -->
 - [GNU Licenses][GNU-licenses]
-- [GNU General Public License Version 3][GPLv3]
+<!-- - [GNU General Public License Version 3][GPLv3] -->
+
+[manifest]: libensketch-xxx/manifest (libensketch-xxx build2 Package Manifest)
+[ensketch-code-of-conduct]: https://github.com/ensketch/.github/blob/main/CODE_OF_CONDUCT.md (Ensketch's Default Code of Conduct)
+[ensketch-contributing]: https://github.com/ensketch/.github/blob/main/CONTRIBUTING.md (Ensketch's Default Contributing Guidelines)
 
 [build2]: https://build2.org (build2 | C/C++ Build Toolchain)
 [build2-install]: https://build2.org/install.xhtml (build2 | Installation)
@@ -181,6 +252,5 @@ Copyright years on xxx source files may be listed using range notation, e.g., 19
 [build2-package-manager]: https://build2.org/bpkg/doc/build2-package-manager-manual.xhtml (The build2 Package Manager)
 [build2-intro-consumption]: https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#guide-consume-pkg (The build2 Toolchain Introduction: Package Consumption)
 [build2-intro-unpackaged-dependencies]: https://build2.org/build2-toolchain/doc/build2-toolchain-intro.xhtml#guide-unpackaged-deps (The build2 Toolchain Introduction: Using Unpackaged Dependencies)
-[ensketch-code-of-conduct]: https://github.com/ensketch/.github/blob/main/CODE_OF_CONDUCT.md (Ensketch's Default Code of Conduct)
 [GNU-licenses]: https://www.gnu.org/licenses/ (GNU Licenses)
 [GPLv3]: https://www.gnu.org/licenses/gplv3.html (GNU General Public License Version 3)
