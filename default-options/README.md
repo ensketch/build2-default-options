@@ -2,7 +2,7 @@
 
 # xxx
 
-xxx is a C++ library.
+`xxx` is a C++ library.
 
 ![top-language-badge](https://img.shields.io/github/languages/top/ensketch/xxx.svg?style=for-the-badge)
 ![code-size-badge](https://img.shields.io/github/languages/code-size/ensketch/xxx.svg?style=for-the-badge)
@@ -19,7 +19,7 @@ xxx is a C++ library.
 
 ## Requirements and Dependencies
 
-This projects uses the [standard `build2` CI service][ci.cppget.org] to build and test its source code with a [variety of build configurations][ci.cppget.org-build-configs].
+`xxx` uses the [standard `build2` CI service][ci.cppget.org] to build and test its source code with a [variety of build configurations][ci.cppget.org-build-configs].
 For a thorough list of requirements, see its [`manifest`][manifest] file.
 To get detailed information on the current build status, see [Development Setup](#development-setup).
 <!-- To get the build status of already published package versions, see [the package's build status report]. -->
@@ -46,7 +46,7 @@ Below is a concise list of requirements and dependencies to build and use this p
 ## Getting Started
 <!-- ## Build, Test, and Install -->
 
-This project relies on [the `build2` toolchain][build2], and in order to use it, you should ensure that the toolchain is installed on your system.
+`xxx` relies on [the `build2` toolchain][build2], and in order to use it, you should ensure that the toolchain is installed on your system.
 To begin, we suggest attempting to acquire it from your system's package manager.
 In the event that the package is not officially available through your system, the [The `build2` Installation Manual][build2-install] offers straightforward instructions for building the toolchain from source for various target configurations.
 Moreover, it is advisable, though not mandatory, to become acquainted with the [toolchain's documentation][build2-docs].
@@ -191,7 +191,7 @@ bdep ci
 
 ## Configuration
 
-This project does not contain any public configuration options.
+`xxx` does not include any publicly accessible configuration options.
 
 ## Documentation
 
@@ -229,7 +229,7 @@ No changelog is currently available as no versions have been released yet.
 
 ## Contributing
 
-xxx is an open-source project, and we highly appreciate and value contributions from individuals like you.
+`xxx` is an open-source project, and we highly appreciate and value contributions from individuals like you.
 
 - If you encounter any bugs or issues, we kindly request that you use our [GitHub issue tracking page][project-issues] to report them.
 - If you have innovative ideas or feel that certain capabilities are missing, please don't hesitate to request a new feature.
@@ -244,9 +244,9 @@ All contributors are expected to adhere to [our established code of conduct][ens
 
 ## Contact
 
-If you have any questions or comments regarding xxx, please don't hesitate to reach out to us at ensketch@mailbox.org.
+If you have any questions or comments regarding `xxx`, please don't hesitate to reach out to us at ensketch@mailbox.org.
 If you come across any bugs or encounter issues, we kindly request that you make use of our [GitHub issue tracking page][project-issues].
-Additionally, if you are incorporating xxx into your projects, we'd greatly appreciate it if you could drop us a brief message.
+Additionally, if you are incorporating `xxx` into your projects, we'd greatly appreciate it if you could drop us a brief message.
 It would be immensely helpful if you could introduce yourself and provide insights into your use case.
 This information plays a crucial role in justifying the time and effort we invest in maintaining this project.
 
@@ -257,14 +257,14 @@ The revision history in the version control system is the primary source of auth
 Please see individual source files for appropriate copyright notices.
 For more information, see the file [`AUTHORS.md`](AUTHORS.md).
 
-xxx is free software, distributed under the terms of the GNU General
+`xxx` is free software, distributed under the terms of the GNU General
 Public License as published by the Free Software Foundation,
 version 3 of the License (or any later version).  For more information,
 see the [GNU General Public License][GPLv3] or the file [`COPYING.md`](COPYING.md).
 
-xxx is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+`xxx` is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-Copyright years on xxx source files may be listed using range notation, e.g., 1987-2012, indicating that every year in the range, inclusive, is a copyrightable year that could otherwise be listed individually.
+Copyright years on `xxx` source files may be listed using range notation, e.g., 1987-2012, indicating that every year in the range, inclusive, is a copyrightable year that could otherwise be listed individually.
 
 ## References and Other Resources
 
