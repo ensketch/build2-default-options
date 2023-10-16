@@ -1,5 +1,18 @@
---pre-hook "echo bdep-new-package"
-
---post-hook "rm README.md"
+# Repository Support Files
+#
 --post-hook "ln -s ../README.md README.md"
 --post-hook "ln -s ../AUTHORS.md AUTHORS.md"
+--post-hook "ln -s ../COPYING.md COPYING.md"
+
+# Add copyright and license files to 'buildfile'.
+#
+--post-hook "sed -i -e 's/manifest/manifest doc{README.md} legal{AUTHORS.md COPYING.md}/g' buildfile"
+
+# Generate 'manifest' from template.
+#
+--post-hook "cp @root@/.develop/manifest manifest"
+--post-hook "sed -i -e 's/yyy/@name@/g' -e 's/ttt/@type@/g' manifest"
+
+# Debug Message
+#
+#--pre-hook "echo bdep-new-package"

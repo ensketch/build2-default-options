@@ -1,3 +1,8 @@
+# Assert that the project type is 'empty'.
+# Ensketch does not allow pure package repositories.
+#
+--pre-hook "$options_dir$/assert-project-is-empty.sh"
+
 # Use Git with 'main' as default branch.
 #
 --vcs git,branch=main
@@ -5,24 +10,46 @@
 # Use whitelisting by copying '.gitignore' template.
 # Default '.gitignore' have already been cleared.
 #
---post-hook "cp $options_dir$/project.gitignore @root@/.gitignore"
+--post-hook "cp $options_dir$/project.gitignore .gitignore"
+
+# Create directory for files needed
+# to set up the development environment.
+#
+--post-hook "mkdir .develop"
 
 # Set up default Git hooks.
 #
 --post-hook "$options_dir$/git-hooks-init.sh"
 --post-hook "$options_dir$/git-hooks-setup.sh"
 #
---post-hook "cp $options_dir$/git-hooks-setup.sh ."
+--post-hook "cp $options_dir$/git-hooks-setup.sh .develop/."
 
-# Support Files
+# Support Files for Repository
 #
---post-hook "cp $options_dir$/AUTHORS.md @root@/."
---post-hook "cp $options_dir$/project.clang-format @root@/.clang-format"
+--post-hook "cp $options_dir$/README.md ."
+--post-hook "sed -i -e 's/xxx/@name@/g' README.md"
 
-# Manifest
+# Copyright and License
 #
-# Remove comments and fix URL and e-mail address.
-#
---post-hook "sed -i -e 's/^#.*$$//g' -e 's#^url: .*$$#url: https://github.com/ensketch/@name@#g' -e 's/^email: .*$$/email: ensketch@@mailbox.org/g' @root@/manifest"
+--post-hook "cp $options_dir$/AUTHORS.md ."
+--post-hook "cp $options_dir$/COPYING.md ."
+--post-hook "cp $options_dir$/copyright-notice.md .develop/."
+--post-hook "cp $options_dir$/license-notice.md .develop/."
+--post-hook "sed -i -e 's/xxx/@name@/g' .develop/license-notice.md"
 
---pre-hook "echo bdep-new-project"
+# Support Files for Source Code
+#
+--post-hook "cp $options_dir$/project.clang-format .clang-format"
+
+# Set up manifest template.
+#
+--post-hook "cp $options_dir$/project.manifest .develop/manifest"
+--post-hook "sed -i -e 's/xxx/@name@/g' .develop/manifest"
+
+# Tweak 'repositories.manifest'.
+#
+--post-hook "sed -i -e 's%git.build2.org/hello/libhello.git%github.com/ensketch/xstd.git%g' repositories.manifest"
+
+# Debug Message
+#
+# --pre-hook "echo bdep-new-project"

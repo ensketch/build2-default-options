@@ -1,1 +1,3 @@
---pre-hook "echo bdep-new-source"
+# Debug Message
+#
+#--pre-hook "echo bdep-new-source"

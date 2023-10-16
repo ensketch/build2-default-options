@@ -14,8 +14,10 @@
 
 # Licenses
 #
---type "bare,license=other: TODO"
---type "lib,license=other: TODO"
---type "exe,license=other: TODO"
+--type bare,no-readme,license=GPL-3.0-or-later
+--type lib,no-readme,license=GPL-3.0-or-later
+--type exe,no-readme,license=GPL-3.0-or-later
 
---pre-hook "echo bdep-new"
+# Debug Message
+#
+# --pre-hook "echo bdep-new"

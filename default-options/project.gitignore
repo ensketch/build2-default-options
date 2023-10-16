@@ -2,19 +2,22 @@
 #
 *
 
+# Don't ignore directories.
+#
+!*/
+
 # Don't ignore Git-specific files.
 #
 !.git*
 !.githooks/**
-!setup.sh
+
+# Don't ignore files to set up the development
+#
+!.develop/**
 
 # Don't ignore license and documentation files.
 #
 !*.md
-
-# Don't ignore subfolders.
-#
-!*/
 
 # Don't ignore default C and C++ file extensions.
 #

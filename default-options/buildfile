@@ -7,5 +7,5 @@ options{bdep-new-package}: in{bdep-new-package}
 options{bdep-new-source}: in{bdep-new-source}
 
 ./: bash{*}
-./: support{*.md *.gitignore *.clang-format}
+./: support{*.md *.gitignore *.clang-format *.manifest}
 
