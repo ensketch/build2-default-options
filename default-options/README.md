@@ -40,7 +40,6 @@ Below is a concise list of requirements and dependencies to build and use this p
 <!-- **Automatically handled Dependencies:** -->
 <!-- **Manually handled Requirements:** -->
 
-
 <!-- ## Introduction -->
 
 ## Getting Started
@@ -208,7 +207,7 @@ Currently, there are no FAQs and/or HOWTO entries available.
 
 ### API Reference
 
-At present, we regret to inform you that there is no API reference documentation available, primarily due to the absence of a stable and automated generation mechanism.
+At present, we regret to inform you that there is no API reference documentation available, primarily due to the absence of a stable and automated generation mechanism for modern C++ libraries.
 However, we encourage you to explore the source files for an extensive catalog of namespaces, classes, functions, and variables.
 
 Our source files are organized into interface and implementation units.
@@ -272,8 +271,8 @@ Copyright years on `xxx` source files may be listed using range notation, e.g., 
 - [Ensketch's Default Code of Conduct][ensketch-code-of-conduct]
 
 - [`build2` | C/C++ Build Toolchain][build2]
-- [`cppget.org` | Standard `build2` Package Repository][cppget.org]
-- [`ci.cppget.org` | Standard `build2` CI Service][ci.cppget.org]
+<!-- - [`cppget.org` | Standard `build2` Package Repository][cppget.org] -->
+<!-- - [`ci.cppget.org` | Standard `build2` CI Service][ci.cppget.org] -->
 <!-- - [`build2` | Installation][build2-install] -->
 <!-- - [`build2` | Documentation][build2-docs] -->
 <!-- - [The `build2` Toolchain Introduction][build2-intro] -->
