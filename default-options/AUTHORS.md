@@ -1,6 +1,6 @@
 # Authors
 
-This file contains information about the project authors, maintainers, and contributors for copyright purposes.
+This file contains information about the project authors, maintainers, and contributors of `xxx` for copyright purposes.
 
 The copyright for the code is held by the contributors of the code.
 The revision history in the version control system is the primary source of authorship information for copyright purposes.

@@ -32,6 +32,7 @@
 # Copyright and License
 #
 --post-hook "cp $options_dir$/AUTHORS.md ."
+--post-hook "sed -i -e 's/xxx/@name@/g' AUTHORS.md"
 --post-hook "cp $options_dir$/COPYING.md ."
 --post-hook "cp $options_dir$/copyright-notice.md .develop/."
 --post-hook "cp $options_dir$/license-notice.md .develop/."
