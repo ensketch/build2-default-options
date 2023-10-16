@@ -3,6 +3,13 @@
 #
 --pre-hook "$options_dir$/assert-project-is-empty.sh"
 
+# Create directory for files needed
+# to set up the development environment.
+#
+--post-hook "mkdir .develop"
+--post-hook "cp $options_dir$/init.sh .develop/init.sh"
+--post-hook "$options_dir$/init.sh"
+
 # Use Git with 'main' as default branch.
 #
 --vcs git,branch=main
@@ -12,19 +19,11 @@
 #
 --post-hook "cp $options_dir$/project.gitignore .gitignore"
 
-# Create directory for files needed
-# to set up the development environment.
-#
---post-hook "mkdir .develop"
-
 # Set up default Git hooks.
 #
---post-hook "$options_dir$/git-hooks-init.sh"
 --post-hook "$options_dir$/git-hooks-setup.sh"
-#
---post-hook "cp $options_dir$/git-hooks-setup.sh .develop/."
 
-# Support Files for Repository
+# Add standard 'README.md' file.
 #
 --post-hook "cp $options_dir$/README.md ."
 --post-hook "sed -i -e 's/xxx/@name@/g' README.md"
@@ -34,7 +33,6 @@
 --post-hook "cp $options_dir$/AUTHORS.md ."
 --post-hook "sed -i -e 's/xxx/@name@/g' AUTHORS.md"
 --post-hook "cp $options_dir$/COPYING.md ."
---post-hook "cp $options_dir$/copyright-notice.md .develop/."
 --post-hook "cp $options_dir$/license-notice.md .develop/."
 --post-hook "sed -i -e 's/xxx/@name@/g' .develop/license-notice.md"
 
@@ -42,7 +40,7 @@
 #
 --post-hook "cp $options_dir$/project.clang-format .clang-format"
 
-# Set up manifest template.
+# Set up manifest template for packages.
 #
 --post-hook "cp $options_dir$/project.manifest .develop/manifest"
 --post-hook "sed -i -e 's/xxx/@name@/g' .develop/manifest"

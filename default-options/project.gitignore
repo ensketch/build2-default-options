@@ -11,7 +11,8 @@
 !.git*
 !.githooks/**
 
-# Don't ignore files to set up the development
+# Don't ignore files needed to
+# set up the development environment.
 #
 !.develop/**
 

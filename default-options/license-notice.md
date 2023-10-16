@@ -1,3 +1,5 @@
+Copyright © <year> <author>
+
 This file is part of `xxx`.
 
 `xxx` is free software: you can redistribute it and/or modify it

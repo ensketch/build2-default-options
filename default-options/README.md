@@ -126,12 +126,13 @@ bpkg install libensketch-xxx
 The essential steps for preparing this repository for development are sourced from [the `build2` documentation][build2-docs] and are presented here in a concise format.
 Familiarity with the fundamental usage of the `build2` toolchain is a prerequisite. For a more comprehensive grasp of employing `build2` in your development tasks, please refer to [The build2 Toolchain Introduction][build2-intro].
 
-1. It is strongly advised to establish a dedicated development directory that will serve as the home for all project-specific build files. Clone the repository into this designated folder.
+1. It is strongly advised to establish a dedicated development directory that will serve as the home for all project-specific build files. Clone the repository into this designated folder and run the script to initialize the development environment.
 
 ```
 mkdir xxx && cd xxx
 git clone --recurse https://github.com/ensketch/xxx.git
 cd xxx
+.develop/init.sh
 ```
 
 2. Initialize the project using `bdep` by creating the initial build configuration. By default, this configuration will be automatically placed within the designated development folder, unless you manually specify the configuration directory. Below, you'll find an example command to create a build configuration named `gcc-release` with support for installation and distribution. Following the configuration creation, the command proceeds to initialize the project.
@@ -264,6 +265,9 @@ see the [GNU General Public License][GPLv3] or the file [`COPYING.md`](COPYING.m
 `xxx` is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 Copyright years on `xxx` source files may be listed using range notation, e.g., 1987-2012, indicating that every year in the range, inclusive, is a copyrightable year that could otherwise be listed individually.
+
+Copying and distribution of this file, with or without modification, are permitted in any medium without royalty provided the copyright notice and this notice are preserved.
+This file is offered as-is, without any warranty.
 
 ## References and Other Resources
 
