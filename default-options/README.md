@@ -129,7 +129,7 @@ Familiarity with the fundamental usage of the `build2` toolchain is a prerequisi
 1. It is strongly advised to establish a dedicated development directory that will serve as the home for all project-specific build files. Clone the repository into this designated folder and run the script to initialize the development environment.
 
 ```
-mkdir xxx && cd xxx
+mkdir ensketch && cd ensketch
 git clone --recurse https://github.com/ensketch/xxx.git
 cd xxx
 .develop/init.sh
