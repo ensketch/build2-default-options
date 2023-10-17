@@ -1,3 +1,7 @@
+# Check for the correct name prefixes.
+#
+--pre-hook "$options_dir$/assert-ensketch-prefix.sh"
+
 # Repository Support Files
 #
 --post-hook "ln -s ../README.md README.md"
