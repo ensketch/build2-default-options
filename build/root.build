@@ -19,3 +19,9 @@ assert ($install.root != [null]) \
 
 options_dir = [dir_path] \
   $regex.replace($install.resolve($install.root)/.build2, '\\', '\\\\')
+
+# Set the data root to be the options directory.
+# All documentation and legal files will be
+# installed in their respective subfolders.
+#
+install.data_root = root/.build2/
