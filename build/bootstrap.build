@@ -1,5 +1,7 @@
 project = ensketch-build2-default-options
 
+using version
 using config
+using test
 using install
 using dist
