@@ -12,11 +12,11 @@
 #
 --post-hook "$options_dir$/rm-gitignore.sh"
 
-# Licenses
+# Licenses and Source Layout for Libraries and Executables
 #
 --type bare,no-readme,license=GPL-3.0-or-later
---type lib,no-readme,license=GPL-3.0-or-later
---type exe,no-readme,license=GPL-3.0-or-later
+--type lib,no-readme,license=GPL-3.0-or-later,prefix=sources
+--type exe,no-readme,license=GPL-3.0-or-later,prefix=sources,no-subdir
 
 # Debug Message
 #
